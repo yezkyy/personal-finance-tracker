@@ -4,15 +4,20 @@ from src.reminder import check_due_bills
 
 class ReminderPage:
     def __init__(self, root):
-        tk.Label(root, text="Upcoming Bills and Reminders", font=("Helvetica", 14, "bold")).pack(pady=20)
+        root.config(bg="#F1F0E8")
 
+        # Heading for the page
+        tk.Label(root, text="Upcoming Bills and Reminders", font=("Helvetica", 14, "bold"), bg="#F1F0E8").pack(pady=20)
+
+        # Button to check due bills
         self.reminder_button = tk.Button(
             root, text="Check Due Bills", command=self.show_reminders,
-            bg="#F1C40F", fg="black", font=("Helvetica", 12, "bold"), relief="flat", bd=2
+            bg="#89A8B2", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
         )
         self.reminder_button.pack(pady=10)
 
-        self.reminder_listbox = tk.Listbox(root, width=50, height=10, font=("Helvetica", 12), selectmode=tk.SINGLE, relief="flat")
+        # Listbox to show reminders
+        self.reminder_listbox = tk.Listbox(root, width=50, height=10, font=("Helvetica", 12), selectmode=tk.SINGLE, relief="flat", bg="#E5E1DA")
         self.reminder_listbox.pack(pady=10)
 
     def show_reminders(self):

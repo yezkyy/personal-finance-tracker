@@ -9,26 +9,28 @@ class ReportPage:
         self.create_report_page()
 
     def create_report_page(self):
-        tk.Label(self.root, text="Generate Financial Report", font=("Helvetica", 14, "bold")).grid(row=0, column=0, pady=20)
+        tk.Label(self.root, text="Generate Financial Report", font=("Helvetica", 14, "bold"), bg="#F1F0E8").grid(row=0, column=0, pady=20)
 
+        # Button for showing report
         self.report_button = tk.Button(
             self.root, text="Show Report", command=self.open_report_window,
-            bg="#3498DB", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
+            bg="#89A8B2", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
         )
-        self.report_button.grid(row=1, column=0, pady=10)
+        self.report_button.grid(row=1, column=0, pady=10, padx=20, sticky="ew")
 
+        # Button for viewing chart
         self.chart_button = tk.Button(
             self.root, text="View Expense Chart", command=plot_expenses,
-            bg="#E74C3C", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
+            bg="#B3C8CF", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
         )
-        self.chart_button.grid(row=2, column=0, pady=10)
+        self.chart_button.grid(row=2, column=0, pady=10, padx=20, sticky="ew")
 
-        # Tombol Back
+        # Back button
         self.back_button = tk.Button(
             self.root, text="Back", command=self.back,
-            bg="#E74C3C", fg="white", font=("Helvetica", 12, "bold"), relief="flat", bd=2
+            bg="#E5E1DA", fg="black", font=("Helvetica", 12, "bold"), relief="flat", bd=2
         )
-        self.back_button.grid(row=3, column=0, pady=20)
+        self.back_button.grid(row=3, column=0, pady=20, padx=20, sticky="ew")
 
     def open_report_window(self):
         report_window = Toplevel()
